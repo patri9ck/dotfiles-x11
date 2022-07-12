@@ -1,0 +1,37 @@
+#!/bin/sh
+
+get_music() {
+	if playerctl -s -p "$PLAYER" status >/dev/null
+	then
+		title="$(playerctl -s -p "$PLAYER" metadata title)"
+		artist="$(playerctl -s -p "$PLAYER" metadata artist)"
+	
+		if [ -z "$title" ] || [ -z "$artist" ]
+		then
+			echo "$artist$title"
+		else
+			echo "$artist - $title"
+		fi
+	fi
+}
+
+show() {
+	if pgrep -x "$PLAYER_EXECUTABLE"
+	then
+		xdo activate -n "$PLAYER_CLASS"
+	else
+		eval "$PLAYER_EXECUTABLE"
+	fi
+}
+
+case "$1" in
+	get-music)
+		get_music
+		;;
+	show)
+		show
+		;;
+	*)
+		exit 1
+		;;
+esac

@@ -1,0 +1,38 @@
+#!/bin/sh
+
+hostname="$(hostname)"
+	
+if [ "$hostname" = notebook ]
+then
+	batsignal -b -w 20 -c 10 -d 5
+	
+	bspc monitor -d 1 2 3 4 5
+elif [ "$hostname" = "desktop" ]
+then
+	bspc monitor HDMI-A-1 -d 1 2 3
+	bspc monitor DisplayPort-1 -d 4 5 6
+
+	bspc rule -a 'TeamSpeak 3' desktop=^1
+	bspc rule -a 'discord' desktop=^1
+fi
+
+gnome-keyring-daemon --start
+
+polybar "$hostname" &
+sxhkd &
+dunst &
+picom -b
+blueman-applet &
+rclone mount "Google Drive:" "$HOME/Google Drive" &
+thunar --daemon &
+nm-applet &
+a2ln "$PHONE_NOTIFICATIONS_PORT" &
+
+xwallpaper --stretch "$HOME/Pictures/.background"
+
+xsetroot -cursor_name left_ptr
+
+wmname LG3D
+
+bspc config window_gap 13
+bspc config border_width 0

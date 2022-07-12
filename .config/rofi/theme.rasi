@@ -1,0 +1,51 @@
+* {
+  selected-text-color: #ffffff;
+  unselected-text-color: #626469;
+
+  selected-background-color: #06a284;
+  unselected-background-color: #272a34;
+
+  background-color: @unselected-background-color;
+}
+
+entry {
+  text-color: @selected-text-color;
+  padding: 8;
+}
+
+listview {
+  scrollbar: true;
+  lines: 5;
+}
+
+scrollbar {
+  handle-color: @selected-background-color;
+  handle-width: 10;
+  padding: 0 8 0 8;
+}
+
+textbox {
+  text-color: @selected-text-color;
+  padding: 8;
+}
+
+element selected, element-icon selected, element-text selected {
+  background-color: @selected-background-color;
+}
+
+element-icon, element-text {
+  padding: 8;
+}
+
+element-icon {
+  size: 20;
+}
+
+element-text {
+  text-color: @unselected-text-color;
+  highlight: none;
+}
+
+element-text selected {
+  text-color: @selected-text-color;
+}

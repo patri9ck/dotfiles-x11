@@ -1,0 +1,54 @@
+[global]
+    width = (0,500)
+    origin = top-right
+    offset = 26x65
+    
+    frame_width = 0
+    separator_height = 0
+
+    padding = 10
+    horizontal_padding = 10
+
+    alignment = left
+    font = Cantarell 11
+
+    icon_position = left
+    min_icon_size = 30
+    max_icon_size = 30
+
+    stack_duplicates = false
+    show_indicators = false
+    markup = full
+    format = "%s\n%b"
+
+    progress_bar = true
+    progress_bar_height = 10
+    progress_bar_frame_width = 0
+
+    mouse_left_click = do_action, close_current
+    mouse_middle_click = none
+    mouse_right_click = close_current
+
+[urgency_low]
+    background = "#272a34"
+    foreground = "#ffffff"
+
+    highlight = "#06a284"
+
+    timeout = 2
+
+[urgency_normal]
+    background = "#272a34"
+    foreground = "#ffffff"
+
+    highlight = "#06a284"
+
+    timeout = 4
+
+[urgency_critical]
+    background = "#272a34"
+    foreground = "#ffffff"
+
+    highlight = "#06a284"
+
+    timeout = 6
