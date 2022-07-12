@@ -14,7 +14,7 @@ upload() {
 	then
 		url=$(echo "$response" | xml sel -t --value-of '/data/link')
 		
-		body="Uploaded to Imgur"
+		body='Uploaded to Imgur'
 
 		echo "$url" | xclip -selection clipboard
 
@@ -23,16 +23,16 @@ upload() {
 		xclip -selection clipboard -t image/png -i "$local_file"
 	fi
 
-	notify-send -i "$HOME/Pictures/.zoom" "Screenshot taken" "$body"
+	notify-send -i "$HOME/Pictures/.zoom" 'Screenshot taken' "$body"
 }
 
-screenshot_fullscreen() {
+fullscreen() {
 	maim "$local_file"
 
 	upload
 }
 
-screenshot_selection() {
+selection() {
 	if ! maim -s "$local_file"
 	then
 		exit 1
@@ -42,11 +42,11 @@ screenshot_selection() {
 }
 
 case "$1" in
-	screenshot-fullscreen)
-		screenshot_fullscreen
+	fullscreen)
+		fullscreen
 		;;
-	screenshot-selection)
-		screenshot_selection
+	selection)
+		selection
 		;;
 	*)
 		exit 1

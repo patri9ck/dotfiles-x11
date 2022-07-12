@@ -1,5 +1,23 @@
 #!/bin/sh
 
-bspc rule -a \* -o state=floating center=true rectangle="${FLOATING_WINDOW_WIDTH}x$FLOATING_WINDOW_HEIGHT+0+0"
+once() {
+	bspc rule -a \* -o state=floating center=true rectangle="${FLOATING_WINDOW_WIDTH}x$FLOATING_WINDOW_HEIGHT+0+0"
 
-eval "$*"
+	eval "$1"
+}
+
+everytime() {
+	bspc rule -a "$1" state=floating center=true rectangle="${FLOATING_WINDOW_WIDTH}x$FLOATING_WINDOW_HEIGHT+0+0"
+}
+
+case "$1" in
+	once)
+		once "$2"
+		;;
+	everytime)
+		everytime "$2"
+		;;
+	*)
+		exit 1
+		;;
+esac

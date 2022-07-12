@@ -46,15 +46,15 @@ super + e
 {XF86AudioMicMute,alt + {m,button9}}
 	pamixer --default-source -t && \
         [ "$(pamixer --default-source --get-mute)" = false ] && \
-     	notify-send "Microphone unmuted" || \
-        notify-send "Microphone muted"
+     	notify-send 'Microphone unmuted' || \
+        notify-send 'Microphone muted'
 
 # toggle webcam
 alt + {w,button8}
 	webcam toggle && \
 	[ "$(webcam get-status)" = enabled ] && \
-	notify-send "Webcam enabled" || \
-	notify-send "Webcam disabled"
+	notify-send 'Webcam enabled' || \
+	notify-send 'Webcam disabled'
 
 # manage player
 XF86Audio{Stop,Prev,Next,Play}
@@ -74,4 +74,4 @@ XF86MonBrightness{Down,Up}
 
 # take screenshot
 Print + {_,shift}
-	screenshot screenshot-{fullscreen,selection}
+	screenshot {fullscreen,selection}

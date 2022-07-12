@@ -4,10 +4,10 @@ hostname="$(hostname)"
 	
 if [ "$hostname" = notebook ]
 then
-	batsignal -b -w 20 -c 10 -d 5
+	batsignal -b -e -w 20 -c 10 -d 5
 	
 	bspc monitor -d 1 2 3 4 5
-elif [ "$hostname" = "desktop" ]
+elif [ "$hostname" = desktop ]
 then
 	bspc monitor HDMI-A-1 -d 1 2 3
 	bspc monitor DisplayPort-1 -d 4 5 6
@@ -36,3 +36,8 @@ wmname LG3D
 
 bspc config window_gap 13
 bspc config border_width 0
+
+floating-window everytime 'iwgtk'
+floating-window everytime 'Blueman-manager'
+floating-window everytime 'Pavucontrol'
+floating-window everytime 'Bitwarden'

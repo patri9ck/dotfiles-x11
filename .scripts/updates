@@ -10,7 +10,7 @@ update() {
 		exit 1
 	fi
 	
-	floating-window kitty paru &
+	floating-window once 'kitty paru'
 }
 
 case "$1" in
