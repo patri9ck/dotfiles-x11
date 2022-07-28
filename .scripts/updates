@@ -1,7 +1,7 @@
 #!/bin/sh
 
 count() {
-	(paru -Qum && checkupdates) 2>/dev/null | wc -l
+	(paru -Qum ; checkupdates) 2>/dev/null | wc -l
 }
 
 update() {
