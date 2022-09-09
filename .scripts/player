@@ -1,6 +1,6 @@
 #!/bin/sh
 
-music() {
+get_music() {
 	if playerctl -s -p "$PLAYER" status >/dev/null
 	then
 		title="$(playerctl -s -p "$PLAYER" metadata title)"
@@ -25,8 +25,8 @@ show() {
 }
 
 case "$1" in
-	music)
-		music
+	get-music)
+		get_music
 		;;
 	show)
 		show
