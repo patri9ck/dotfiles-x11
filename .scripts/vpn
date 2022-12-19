@@ -7,7 +7,7 @@ is_enabled() {
 	fi
 }
 
-get_status() {
+status() {
 	if is_enabled
 	then
 		echo enabled
@@ -26,8 +26,8 @@ toggle() {
 }
 
 case "$1" in
-	get-status)
-		get_status
+	status)
+		status
 		;;
 	toggle)
 		toggle

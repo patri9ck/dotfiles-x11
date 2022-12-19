@@ -52,7 +52,7 @@ super + e
 # toggle webcam
 alt + {w,button8}
 	webcam toggle && \
-	[ "$(webcam get-status)" = enabled ] && \
+	[ "$(webcam status)" = enabled ] && \
 	notify-send 'Webcam enabled' || \
 	notify-send 'Webcam disabled'
 

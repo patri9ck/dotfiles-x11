@@ -1,6 +1,6 @@
 #!/bin/sh
 
-get_count() {
+count() {
 	(paru -Qum ; checkupdates) 2>/dev/null | wc -l
 }
 
@@ -14,8 +14,8 @@ update() {
 }
 
 case "$1" in
-	get-count)
-		get_count
+	count)
+		count
 		;;
 	update)
 		update
