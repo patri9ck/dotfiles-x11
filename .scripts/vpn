@@ -1,0 +1,38 @@
+#!/bin/sh
+
+is_enabled() {
+	if [ -z "$(sudo wg)" ]
+	then
+		return 1
+	fi
+}
+
+get_status() {
+	if is_enabled
+	then
+		echo enabled
+	else
+		echo disabled
+	fi
+}
+
+toggle() {
+	if is_enabled
+	then
+		sudo wg-quick down "$VPN_INTERFACE"
+	else
+		sudo wg-quick up "$VPN_INTERFACE"
+	fi
+}
+
+case "$1" in
+	get-status)
+		get_status
+		;;
+	toggle)
+		toggle
+		;;
+	*)
+		exit 1
+		;;
+esac

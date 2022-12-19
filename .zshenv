@@ -1,5 +1,11 @@
-export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
-export PATH="$PATH:$HOME/.scripts:$GEM_HOME/bin:$HOME/Android/Sdk/platform-tools"
+if command -v ruby
+then
+	export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+
+	export PATH="$PATH:$GEM_HOME/bin"
+fi
+
+export PATH="$PATH:$HOME/.scripts:$HOME/Android/Sdk/platform-tools"
 
 hostname="$(hostname)"
 
@@ -11,6 +17,8 @@ then
 
 	export BATTERY=BAT0
 	export BATTERY_ADAPTER=ADP1
+
+	export VPN_INTERFACE=wg0
 elif [ "$hostname" = desktop ]
 then
 	export WEBCAM='USB Web Camera'
