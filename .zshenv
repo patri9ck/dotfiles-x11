@@ -41,5 +41,7 @@ export SAVEHIST=99
 export HISTSIZE=99
 export HISTFILE="$HOME/.history"
 
+export XCURSOR_THEME=capitaine-cursors-light
+
 # IMGUR_API_KEY
 . "$HOME/.secrets"
