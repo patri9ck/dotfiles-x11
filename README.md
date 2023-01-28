@@ -39,6 +39,7 @@ $ rm -rf paru-bin
 - gvfs-mtp
 - ristretto
 - tumbler
+- mousepad
 
 ## Fonts
 - ttf-caladea
