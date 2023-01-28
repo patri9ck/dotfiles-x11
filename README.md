@@ -22,16 +22,23 @@ $ rm -rf paru-bin
 - picom
 - blueman
 - pavucontrol
-- thunar
 - xwallpaper
 - polybar
 - dunst
 - kitty
 - rofi
 - pipewire-pulse
-- iwgtk (AUR)
+- iwgtk
 - [Driver Installation](https://wiki.archlinux.org/title/xorg#Driver_installation)
 - [Video Acceleration](https://wiki.archlinux.org/title/Hardware_video_acceleration#Installation)
+
+## File Manager
+- thunar
+- thunar-archive-plugin
+- xarchiver
+- gvfs-mtp
+- ristretto
+- tumbler
 
 ## Fonts
 - ttf-caladea
@@ -56,6 +63,7 @@ $ rm -rf paru-bin
 - xclip
 - maim
 - rclone
+- fuse2
 - playerctl
 - paru
 - pamixer
