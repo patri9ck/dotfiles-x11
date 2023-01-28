@@ -59,11 +59,12 @@ $ rm -rf paru-bin
 - pamixer
 - a2ln
 
-## Desktop
+## Computer Specific
+### Desktop
 - openrazer-meta
 - polychromatic
 
-## Notebook
+### Notebook
 - light
 - wireguard-tools
 - batsignal
