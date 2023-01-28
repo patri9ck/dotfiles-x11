@@ -14,6 +14,8 @@ $ rm -rf paru-bin
 - xorg-xinit
 - xorg-xsetroot
 - zsh
+- zsh-syntax-highlighting
+- zsh-completions
 - wmname
 - bspwm
 - sxhkd
