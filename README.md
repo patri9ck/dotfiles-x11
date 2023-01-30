@@ -82,12 +82,11 @@ $ paru -S capitaine-cursors flat-remix flat-remix-gtk
 - a2ln
 - maim
 - pamixer
-- paru
 - playerctl
 - xclip
 
 ```
-$ paru -S a2ln maim pamixer paru playerctl xclip
+$ paru -S a2ln maim pamixer playerctl xclip
 ```
 
 ## Computer Specific
