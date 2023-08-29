@@ -1,4 +1,4 @@
-if command -v ruby
+if command -v ruby >/dev/null
 then
 	export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 
