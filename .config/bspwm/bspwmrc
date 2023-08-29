@@ -10,10 +10,11 @@ then
 elif [ "$hostname" = desktop ]
 then
 	bspc monitor HDMI-A-1 -d 1 2 3
-	bspc monitor DisplayPort-1 -d 4 5 6
+	bspc monitor HDMI-A-0 -d 4 5 6
 
 	polychromatic-cli -d keyboard -o static -c '#8000FF'
-	polychromatic-cli -d mouse -o static -c '#8000FF'
+	polychromatic-cli -d mouse -z scroll -o static -c '#8000FF'
+	polychromatic-cli -d mouse -z logo -o static -c '#8000FF'
 fi
 
 gnome-keyring-daemon --start
@@ -25,7 +26,7 @@ picom -b
 blueman-applet &
 rclone mount "Google Drive:" "$HOME/Google Drive" &
 thunar --daemon &
-a2ln &
+a2ln --no-pairing-server &
 
 xwallpaper --stretch "$HOME/Pictures/.background"
 

@@ -5,7 +5,7 @@ count() {
 }
 
 update() {
-	if [ "$(count)" -eq 0 ] || [ -f /var/lib/pacman/db.lck ]
+	if pgrep paru || [ "$(count)" -eq 0 ]
 	then	
 		exit 1
 	fi
