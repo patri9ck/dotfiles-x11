@@ -13,7 +13,7 @@ if [ "$hostname" = notebook ]
 then
 	export WEBCAM='Integrated Camera'
 
-	export GRAPHICS_CARD=amdgpu_bl0
+	export GRAPHICS_CARD=amdgpu_bl1
 
 	export BATTERY=BAT0
 	export BATTERY_ADAPTER=ADP1
