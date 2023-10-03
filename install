@@ -1,0 +1,52 @@
+#!/bin/sh
+
+main_directory="$(dirname "$(readlink -f $0)")"
+
+packages() {
+	sudo pacman -S --needed base-devel git
+
+	git clone https://aur.archlinux.org/paru-bin.git
+	
+	cd paru-bin
+
+	makepkg -sirc	
+	
+	cd -
+
+	rm -rf paru-bin
+
+	paru -S $(grep -h -v '^#' "$main_directory/packages" "$main_directory/packages-$1")
+}
+
+dotfiles() {
+	ignored_files="README.md\ninstall\npackages\npackages-notebook\npackages-desktop"
+
+	for file in $(find "$main_directory" -type f)
+	do
+		directory="$(dirname "$(echo $file | cut -c$(($(echo -n "$main_directory" | wc -m) + 2))-)")"
+
+		if [ "$(echo -n "$directory" | cut -d / -f 1)" = ".git" ] || ([ "$directory" = "." ] && echo "$ignored_files" | grep -qx "$(basename "$file")")
+		then
+			continue
+		fi
+
+		mkdir -p "$HOME/$directory"
+
+		ln -fs "$file" "$HOME/$directory"
+	done
+}
+
+case "$1" in
+	packages-notebook)
+		packages notebook
+		;;
+	packages-desktop)
+		packages desktop
+		;;
+	dotfiles)
+		dotfiles
+		;;
+	*)
+		exit 1
+		;;
+esac

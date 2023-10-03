@@ -1,0 +1,57 @@
+# Desktop Environment
+blueman
+bspwm
+dunst
+iwgtk
+pavucontrol
+picom
+pipewire-pulse
+polybar
+kitty
+rofi
+sxhkd
+wmname
+xorg-server
+xorg-xinit
+xorg-xsetroot
+xwallpaper
+zsh
+zsh-completions
+zsh-syntax-highlighting
+
+# File Manager
+fuse2
+gvfs-mtp
+mousepad
+rclone
+ristretto
+thunar
+thunar-archive-plugin
+tumbler
+xarchiver
+
+# Fonts
+adobe-source-code-pro-fonts
+adobe-source-sans-fonts
+adobe-source-serif-fonts
+noto-fonts
+noto-fonts-emoji
+ttf-caladea
+ttf-carlito
+ttf-dejavu
+ttf-gentium-basic
+ttf-liberation
+ttf-linux-libertine-g
+ttf-material-icons-git
+
+# Themes
+capitaine-cursors
+flat-remix
+flat-remix-gtk
+
+# Tools
+a2ln
+maim
+pamixer
+playerctl
+xclip

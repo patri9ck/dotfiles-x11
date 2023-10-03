@@ -7,14 +7,7 @@ autoload -Uz compinit
 autoload -Uz vcs_info
 
 precmd() {
-	emulate -L zsh -o extended_glob
-
-	if [[ ./(../)#(.git)(#qN:a) == $HOME/.git ]]
-	then
-		typeset -g vcs_info_msg_0_=
-	else
-		vcs_info
-	fi
+	vcs_info
 }
 
 __git_files () {

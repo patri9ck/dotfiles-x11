@@ -1,110 +1,28 @@
-# Packages
-## Initial Setup
+# Dotfiles
+This repository contains my dotfiles and a script to install them as well as all needed packages.
+
+Start by cloning this repository:
 ```
-# pacman -S --needed base-devel git
-$ git clone https://aur.archlinux.org/paru-bin.git
-$ cd paru-bin
-$ makepkg -sirc
-$ cd ..
-$ rm -rf paru-bin
+$ git clone git@github.com:patri9ck/dotfiles.git .dotfiles
 ```
 
-## Desktop Environment
-- blueman
-- bspwm
-- dunst
-- iwgtk
-- pavucontrol
-- picom
-- pipewire-pulse
-- polybar
-- kitty
-- rofi
-- sxhkd
-- wmname
-- xorg-server
-- xorg-xinit
-- xorg-xsetroot
-- xwallpaper
-- zsh
-- zsh-completions
-- zsh-syntax-highlighting
-- [Driver Installation](https://wiki.archlinux.org/title/xorg#Driver_installation)
-- [Video Acceleration](https://wiki.archlinux.org/title/Hardware_video_acceleration#Installation)
-
+## Installing Packages
+For the desktop:
 ```
-$ paru -S blueman bspwm dunst iwgtk pavucontrol picom pipewire-pulse polybar kitty rofi sxhkd wmname xorg-server xorg-xinit xorg-xsetroot xwallpaper zsh zsh-completions zsh-syntax-highlighting
+$ .dotfiles/install packages-desktop
 ```
 
-## File Manager
-- fuse2
-- gvfs-mtp
-- mousepad
-- rclone
-- ristretto
-- thunar
-- thunar-archive-plugin
-- tumbler
-- xarchiver
-
+For the notebook:
 ```
-$ paru -S fuse2 gvfs-mtp mousepad rclone ristretto thunar thunar-archive-plugin tumbler xarchiver
+$ .dotfiles/install packages-notebook
 ```
 
-## Fonts
-- adobe-source-code-pro-fonts
-- adobe-source-sans-fonts
-- adobe-source-serif-fonts
-- noto-fonts
-- noto-fonts-emoji
-- ttf-caladea
-- ttf-carlito
-- ttf-dejavu
-- ttf-gentium-basic
-- ttf-liberation
-- ttf-linux-libertine-g
-- ttf-material-design-icons
+See [`packages`](packages), [`packages-desktop`](packages-desktop) and [`packages-notebook`](packages-notebook) for a list of all packages which will be installed.
 
+Do not forget to install packages for [graphic card drivers](https://wiki.archlinux.org/title/xorg#Driver_installation) and [video acceleration](https://wiki.archlinux.org/title/Hardware_video_acceleration#Installation).
+
+## Installing Dotfiles
+Dotfiles can be installed by running:
 ```
-$ paru -S adobe-source-code-pro-fonts adobe-source-sans-fonts adobe-source-serif-fonts noto-fonts noto-fonts-emoji ttf-caladea ttf-carlito ttf-dejavu ttf-gentium-basic ttf-liberation ttf-linux-libertine-g ttf-material-design-icons
+$ .dotfiles/install dotfiles
 ```
-
-## Themes
-- capitaine-cursors
-- flat-remix
-- flat-remix-gtk
-
-```
-$ paru -S capitaine-cursors flat-remix flat-remix-gtk
-```
-
-## Tools
-- a2ln
-- maim
-- pamixer
-- playerctl
-- xclip
-
-```
-$ paru -S a2ln maim pamixer playerctl xclip
-```
-
-## Computer Specific
-### Desktop
-- openrazer-meta
-- polychromatic
-
-```
-$ paru -S openrazer-meta polychromatic
-```
-
-### Notebook
-- batsignal
-- light
-- wireguard-tools
-
-```
-$ paru -S batsignal light wireguard-tools
-```
-
-
