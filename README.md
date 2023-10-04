@@ -7,6 +7,8 @@ $ git clone git@github.com:patri9ck/dotfiles.git .dotfiles
 ```
 
 ## Installing Packages
+This only works on distributions with the pacman package manager like Arch Linux.
+
 For the desktop:
 ```
 $ .dotfiles/install packages-desktop
