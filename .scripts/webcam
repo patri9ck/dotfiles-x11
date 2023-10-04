@@ -5,13 +5,13 @@ devices_directory=/sys/bus/usb/devices
 drivers_directory=/sys/bus/usb/drivers/usb
 
 get_device() {
-	for device in $(ls "$devices_directory")
+	for device in $(find "$devices_directory" -maxdepth 1)
 	do
-		product="$devices_directory/$device/product"
+		product="$device/product"
 				
 		if [ -f "$product" ] && [ "$(cat "$product")" = "$WEBCAM" ]
 		then
-			echo "$device"
+			basename "$device"
 
 			return
 		fi
