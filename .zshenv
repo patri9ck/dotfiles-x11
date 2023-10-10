@@ -24,7 +24,7 @@ then
 	export WEBCAM='USB Web Camera'
 fi
 
-export EDITOR=vim
+export EDITOR=neovim
 
 export PLAYER=spotify
 export PLAYER_EXECUTABLE=spotify
