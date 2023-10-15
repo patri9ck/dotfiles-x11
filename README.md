@@ -19,7 +19,7 @@ For the notebook:
 $ .dotfiles/meta/install.sh packages-notebook
 ```
 
-See [`packages.txt`](meta/packages.txt), [`packages-desktop`](meta/packages-desktop.txt) and [`packages-notebook`](meta/packages-notebook.txt) for a list of all packages which will be installed.
+See [`packages.txt`](meta/packages.txt), [`packages-desktop.txt`](meta/packages-desktop.txt) and [`packages-notebook.txt`](meta/packages-notebook.txt) for a list of all packages which will be installed.
 
 Do not forget to install packages for [graphic card drivers](https://wiki.archlinux.org/title/xorg#Driver_installation) and [video acceleration](https://wiki.archlinux.org/title/Hardware_video_acceleration#Installation).
 
