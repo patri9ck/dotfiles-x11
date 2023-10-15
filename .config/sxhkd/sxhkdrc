@@ -42,15 +42,19 @@ super + c
 super + e
 	find-emptiest-desktop
 
+# show password manager
+super + p
+	bitwarden-desktop
+
 # toggle microphone
-{XF86AudioMicMute,alt + {m,button9}}
+{XF86AudioMicMute,alt + m}
 	pamixer --default-source -t && \
         [ "$(pamixer --default-source --get-mute)" = false ] && \
      	notify-send 'Microphone unmuted' || \
         notify-send 'Microphone muted'
 
 # toggle webcam
-alt + {w,button8}
+alt + w
 	webcam toggle && \
 	[ "$(webcam status)" = enabled ] && \
 	notify-send 'Webcam enabled' || \

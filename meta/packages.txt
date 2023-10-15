@@ -2,6 +2,7 @@
 blueman
 bspwm
 dunst
+gnome-keyring
 iwgtk
 pavucontrol
 picom
@@ -11,6 +12,7 @@ kitty
 rofi
 sxhkd
 wmname
+xdo
 xorg-server
 xorg-xinit
 xorg-xsetroot
