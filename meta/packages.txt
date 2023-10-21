@@ -53,7 +53,8 @@ flat-remix-gtk
 
 # Tools
 a2ln
-maim
+shotgun
+hacksaw
 pamixer
 playerctl
 xclip

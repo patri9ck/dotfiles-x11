@@ -27,16 +27,18 @@ upload() {
 }
 
 fullscreen() {
-	maim "$local_file"
+	shotgun -s "$local_file"
 
 	upload
 }
 
 selection() {
-	if ! maim -s "$local_file"
+	if ! selection=$(hacksaw -f "-i %i -g %g")
 	then
 		exit 1
 	fi
+
+	shotgun $selection "$local_file"
 
 	upload
 }
