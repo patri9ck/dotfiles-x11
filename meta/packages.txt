@@ -3,6 +3,7 @@ blueman
 bspwm
 dunst
 gnome-keyring
+iwd
 iwgtk
 pavucontrol
 picom
@@ -53,6 +54,7 @@ flat-remix-gtk
 
 # Tools
 a2ln
+nvim
 shotgun
 hacksaw
 pamixer
