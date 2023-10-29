@@ -54,9 +54,10 @@ flat-remix-gtk
 
 # Tools
 a2ln
-nvim
-shotgun
 hacksaw
+nvim
 pamixer
 playerctl
+shotgun
 xclip
+xmlstarlet
