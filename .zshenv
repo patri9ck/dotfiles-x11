@@ -1,11 +1,6 @@
-if command -v ruby >/dev/null
-then
-	export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 
-	export PATH="$PATH:$GEM_HOME/bin"
-fi
-
-export PATH="$PATH:$HOME/.scripts:$HOME/Android/Sdk/platform-tools"
+export PATH="$PATH:$GEM_HOME/bin:$HOME/.scripts:$HOME/Android/Sdk/platform-tools"
 
 hostname="$(hostname)"
 

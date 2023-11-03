@@ -5,7 +5,7 @@ then
 	mkdir -p "$SCREENSHOT_DIRECTORY"
 fi
 
-local_file="$SCREENSHOT_DIRECTORY/$(date +'%Y-%m-%d %H:%M:%S').png"
+local_file="$SCREENSHOT_DIRECTORY/$(date +'%Y-%m-%d-%H:%M:%S').png"
 
 log_file="$SCREENSHOT_DIRECTORY/.log"
 

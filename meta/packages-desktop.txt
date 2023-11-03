@@ -1,2 +1,3 @@
 openrazer-daemon
 polychromatic
+steam

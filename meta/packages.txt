@@ -3,17 +3,23 @@ blueman
 bspwm
 dunst
 gnome-keyring
+hacksaw
 iwd
 iwgtk
+pamixer
 pavucontrol
 picom
 pipewire-pulse
+playerctl
 polybar
 kitty
 rofi
+shotgun
 sxhkd
 wmname
+xclip
 xdo
+xmlstarlet
 xorg-server
 xorg-xinit
 xorg-xsetroot
@@ -21,6 +27,10 @@ xwallpaper
 zsh
 zsh-completions
 zsh-syntax-highlighting
+
+# Programming
+jdk-openjdk
+ruby
 
 # File Manager
 fuse2
@@ -30,7 +40,6 @@ rclone
 ristretto
 thunar
 thunar-archive-plugin
-tumbler
 xarchiver
 
 # Fonts
@@ -52,12 +61,20 @@ capitaine-cursors
 flat-remix
 flat-remix-gtk
 
-# Tools
+# Command Line Tools
 a2ln
-hacksaw
+cups
+hplip
+htop
 nvim
-pamixer
-playerctl
-shotgun
-xclip
-xmlstarlet
+
+# Applications
+bitwarden
+discord
+galculator
+google-chrome
+jetbrains-toolbox
+libreoffice-fresh
+ristretto
+spotify
+xournalpp
