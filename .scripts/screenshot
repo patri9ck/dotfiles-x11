@@ -23,7 +23,7 @@ upload() {
 		xclip -selection clipboard -t image/png -i "$local_file"
 	fi
 
-	notify-send -i "$HOME/Pictures/.zoom" 'Screenshot taken' "$body"
+	notify-send -i "$HOME/Pictures/.screenshot.png" 'Screenshot taken' "$body"
 }
 
 fullscreen() {

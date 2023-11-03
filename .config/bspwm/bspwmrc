@@ -28,7 +28,7 @@ rclone mount "Google Drive:" "$HOME/Google Drive" &
 thunar --daemon &
 a2ln &
 
-xwallpaper --stretch "$HOME/Pictures/.background"
+xwallpaper --stretch "$HOME/Pictures/.background.png"
 
 xsetroot -cursor_name left_ptr
 
