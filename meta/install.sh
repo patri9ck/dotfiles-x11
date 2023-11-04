@@ -43,11 +43,8 @@ dotfiles() {
 }
 
 case "$1" in
-	packages-notebook)
-		packages notebook
-		;;
-	packages-desktop)
-		packages desktop
+	packages)
+		packages "$2"
 		;;
 	dotfiles)
 		dotfiles

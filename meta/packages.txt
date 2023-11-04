@@ -58,7 +58,7 @@ ttf-material-icons-git
 
 # Themes
 capitaine-cursors
-arc-theme
+arc-gtk-theme
 arc-icon-theme
 
 # Command Line Tools
@@ -66,7 +66,7 @@ a2ln
 cups
 hplip
 htop
-nvim
+neovim
 
 # Applications
 bitwarden

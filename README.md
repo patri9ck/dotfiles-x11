@@ -11,12 +11,12 @@ This only works on distributions with the pacman package manager like Arch Linux
 
 For the desktop:
 ```
-$ .dotfiles/meta/install.sh packages-desktop
+$ .dotfiles/meta/install.sh packages desktop
 ```
 
 For the notebook:
 ```
-$ .dotfiles/meta/install.sh packages-notebook
+$ .dotfiles/meta/install.sh packages notebook
 ```
 
 See [`packages.txt`](meta/packages.txt), [`packages-desktop.txt`](meta/packages-desktop.txt) and [`packages-notebook.txt`](meta/packages-notebook.txt) for a list of all packages which will be installed.
