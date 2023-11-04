@@ -1,31 +1,24 @@
 * {
   selected-text-color: #ffffff;
-  unselected-text-color: #626469;
+  unselected-text-color: #bac3cf;
 
-  selected-background-color: #06a284;
-  unselected-background-color: #272a34;
+  selected-background-color: #5294e2;
+  unselected-background-color: #2f343f;
 
   background-color: @unselected-background-color;
 }
 
 entry {
-  text-color: @selected-text-color;
+  text-color: @unselected-text-color;
   padding: 8;
 }
 
 listview {
-  scrollbar: true;
   lines: 5;
 }
 
-scrollbar {
-  handle-color: @selected-background-color;
-  handle-width: 10;
-  padding: 0 8 0 8;
-}
-
 textbox {
-  text-color: @selected-text-color;
+  text-color: @unselected-text-color;
   padding: 8;
 }
 
