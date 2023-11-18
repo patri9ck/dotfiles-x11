@@ -1,4 +1,4 @@
-# Dotfiles
+# Dotfiles (X11)
 This repository contains my dotfiles and a script to install them as well as all needed packages.
 
 Start by cloning this repository:
