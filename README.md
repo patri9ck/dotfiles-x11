@@ -3,7 +3,7 @@ This repository contains my dotfiles and a script to install them as well as all
 
 Start by cloning this repository:
 ```
-$ git clone git@github.com:patri9ck/dotfiles.git .dotfiles
+$ git clone git@github.com:patri9ck/dotfiles-x11.git .dotfiles
 ```
 
 ## Installing Packages
