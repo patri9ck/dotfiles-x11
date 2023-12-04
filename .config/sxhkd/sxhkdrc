@@ -40,7 +40,7 @@ super + e
 
 # show password manager
 super + p
-	$HOME/.scripts open bitwarden-desktop
+	$HOME/.scripts/open bitwarden-desktop
 
 # toggle microphone
 {XF86AudioMicMute,alt + m}
