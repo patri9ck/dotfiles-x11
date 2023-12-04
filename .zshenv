@@ -1,8 +1,6 @@
-export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
-
-export PATH="$PATH:$GEM_HOME/bin:$HOME/.scripts:$HOME/Android/Sdk/platform-tools"
-
 export HOSTNAME="$(hostname)"
+
+export PATH="$PATH:$HOME/Android/Sdk/platform-tools"
 
 if [ "$HOSTNAME" = notebook ]
 then
@@ -12,6 +10,10 @@ then
 elif [ "$HOSTNAME" = desktop ]
 then
 	export WEBCAM='USB Web Camera'
+
+	export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+
+	export PATH="$PATH:$GEM_HOME/bin"
 fi
 
 export EDITOR=nvim

@@ -31,7 +31,6 @@ zsh-syntax-highlighting
 
 # Programming
 jdk-openjdk
-ruby
 
 # File Manager
 fuse2
