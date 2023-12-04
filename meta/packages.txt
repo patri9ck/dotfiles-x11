@@ -2,6 +2,7 @@
 blueman
 bspwm
 dunst
+eww-x11
 gnome-keyring
 hacksaw
 inetutils
@@ -12,9 +13,7 @@ pavucontrol
 picom
 pipewire-pulse
 playerctl
-polybar
 kitty
-rofi
 shotgun
 sxhkd
 wmname
