@@ -1,16 +1,17 @@
 #!/bin/sh
 
-if ! [ -d "$SCREENSHOT_DIRECTORY" ]
+directory="$HOME/Pictures/Screenshots"
+
+if ! [ -d "$directory" ]
 then
-	mkdir -p "$SCREENSHOT_DIRECTORY"
+	mkdir -p "$directory"
 fi
 
-local_file="$SCREENSHOT_DIRECTORY/$(date +'%Y-%m-%d-%H:%M:%S').png"
-
-log_file="$SCREENSHOT_DIRECTORY/.log"
+image="$directory/$(date +'%Y-%m-%d-%H:%M:%S').png"
+log="$directory/.log"
 
 upload() {
-	if response="$(curl -f -s -H "Authorization: Client-ID $IMGUR_API_KEY" -F "image=@$local_file" 'https://api.imgur.com/3/image.xml')"
+	if response="$(curl -f -s -H "Authorization: Client-ID $IMGUR_API_KEY" -F "image=@$image" 'https://api.imgur.com/3/image.xml')"
 	then
 		url=$(echo "$response" | xml sel -t --value-of '/data/link')
 		
@@ -18,12 +19,12 @@ upload() {
 
 		echo "$url" | xclip -selection clipboard
 
-		echo "$url $(printf 'https://imgur.com/delete/%s' $(echo "$response" | xml sel -t --value-of '/data/deletehash'))" >> "$log_file"
+		echo "$url https://imgur.com/delete/$(echo "$response" | xml sel -t --value-of '/data/deletehash')" >> "$log"
 	else
-		xclip -selection clipboard -t image/png -i "$local_file"
+		xclip -selection clipboard -t image/png -i "$image"
 	fi
 
-	notify-send -i "$HOME/Pictures/.screenshot.png" 'Screenshot taken' "$body"
+	notify-send 'Screenshot taken' "$body"
 }
 
 fullscreen() {
@@ -38,7 +39,7 @@ selection() {
 		exit 1
 	fi
 
-	shotgun $selection "$local_file"
+	shotgun $selection "$image"
 
 	upload
 }

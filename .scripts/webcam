@@ -1,34 +1,33 @@
 #!/bin/sh
 
-devices_directory=/sys/bus/usb/devices
-
-drivers_directory=/sys/bus/usb/drivers/usb
-
 get_device() {
-	for device in $(find "$devices_directory" -maxdepth 1)
+	for device in $(find /sys/bus/usb/devices -maxdepth 1)
 	do
 		product="$device/product"
 				
 		if [ -f "$product" ] && [ "$(cat "$product")" = "$WEBCAM" ]
 		then
 			basename "$device"
-
-			return
 		fi
 	done
-
-	return 1	
 }
 
+device="$(get_device)"
+
+if [ -z "$device" ]
+then
+	exit 1
+fi
+
 is_enabled() {
-	if ! [ -d "$drivers_directory/$1" ]
+	if ! [ -d "/sys/bus/usb/drivers/usb/$device" ]
 	then
 		return 1
 	fi
 }
 
 status() {
-	if device="$(get_device)" && is_enabled "$device"
+	if is_enabled
 	then
 		echo enabled
 	else
@@ -37,16 +36,11 @@ status() {
 }
 
 toggle() {
-	if ! device="$(get_device)"
+	if is_enabled
 	then
-		exit 1
-	fi
-
-	if is_enabled "$device"
-	then
-		echo "$device" | sudo tee "$drivers_directory/unbind"
+		echo "$device" | sudo tee "/sys/bus/usb/drivers/usb/unbind"
 	else
-		echo "$device" | sudo tee "$drivers_directory/bind"
+		echo "$device" | sudo tee "/sys/bus/usb/drivers/usb/bind"
 	fi
 }
 

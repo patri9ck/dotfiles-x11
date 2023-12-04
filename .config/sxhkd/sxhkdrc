@@ -3,8 +3,8 @@ super + Return
 	kitty
 
 # show launcher or window switcher
-super + {_,shift} + l
-	rofi -show {drun,window} -m $(bspc query -M -m --names)
+super + l
+	$HOME/.scripts/apps toggle
 
 # log out
 super + Escape
@@ -30,10 +30,6 @@ super + shift + {Left,Right}
 super + {0-9}
 	bspc desktop -f {0-9}
 
-# switch workspace using mouse wheel
-super + button{4,5}
-	bspc desktop -f {prev,next}.local
-
 # close all notifications
 super + c
 	dunstctl close-all
@@ -44,7 +40,7 @@ super + e
 
 # show password manager
 super + p
-	bitwarden-desktop
+	$HOME/.scripts open bitwarden-desktop
 
 # toggle microphone
 {XF86AudioMicMute,alt + m}
@@ -55,7 +51,7 @@ super + p
 
 # toggle webcam
 alt + w
-	webcam toggle && \
+	$HOME/.scripts/webcam toggle && \
 	[ "$(webcam status)" = enabled ] && \
 	notify-send 'Webcam enabled' || \
 	notify-send 'Webcam disabled'
@@ -76,6 +72,10 @@ XF86AudioMute
 XF86MonBrightness{Down,Up}
 	light -{U,A} 5
 
+# open calculator
+XF86Calculator
+	$HOME/.scripts/open galculator
+
 # take screenshot
 Print + {_,shift}
-	screenshot {fullscreen,selection}
+	$HOME/.scripts/screenshot {fullscreen,selection}

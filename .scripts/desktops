@@ -1,0 +1,13 @@
+#!/bin/sh
+
+bspc subscribe | while read -r line
+do
+	desktops='['
+
+	for desktop in $(bspc query -D --names | sort)
+	do
+		desktops="$desktops[$desktop, $(bspc query -D -d "$desktop.active" --names || printf 0), $(bspc query -N -d "$desktop" -n '.window.!hidden' | wc -l)]"
+	done
+	
+	eww update "desktops=$(echo "$desktops]" | sed 's/\]\[/\],\[/g')"
+done

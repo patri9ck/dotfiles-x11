@@ -1,5 +1,10 @@
 #!/bin/sh
 
+if [ "$HOSTNAME" != notebook ]
+then
+	exit 1
+fi
+
 is_enabled() {
 	if [ -z "$(sudo wg)" ]
 	then
@@ -25,12 +30,22 @@ toggle() {
 	fi
 }
 
+endpoint() {
+	if is_enabled
+	then
+		sudo wg | grep 'endpoint: ' | awk -F 'endpoint: ' '{print $2}' 
+	fi
+}
+
 case "$1" in
 	status)
 		status
 		;;
 	toggle)
 		toggle
+		;;
+	endpoint)
+		endpoint
 		;;
 	*)
 		exit 1
