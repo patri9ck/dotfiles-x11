@@ -4,6 +4,7 @@ bspwm
 dunst
 gnome-keyring
 hacksaw
+inetutils
 iwd
 iwgtk
 pamixer
