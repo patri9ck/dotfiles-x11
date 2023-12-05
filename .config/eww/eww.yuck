@@ -1,24 +1,21 @@
-(defwindow bar :geometry (geometry :y "8px"
-	                           :width "1904px"
+(defwindow bar :geometry (geometry :y 8
+	                           :width 1904
                                    :anchor "top center")
 	       :reserve (struts :distance "44px"
 	                        :side "top")
-  (box :class "bar-window"
-    (box :halign "start"
-         :space-evenly false
+  (centerbox :class "bar-window"
+    (box :space-evenly false
       (time)
       (battery)
       (system)
       (volume)
       (brightness))
-    (box :halign "center"
-      (player))
-    (box :halign "end"
-      (desktops))))
+    (player)
+    (desktops)))
 
 
-(defwindow time :geometry (geometry :x "16px"
-	                            :y "60px"
+(defwindow time :geometry (geometry :x 16
+	                            :y 60
 			            :anchor "top left")
                 :windowtype "dialog"
   (box :class "time-window"
@@ -133,7 +130,6 @@
   `$HOME/.scripts/battery time`)
 
 
-(defvar current-desktop 1)
 (defvar desktops "[]")
 
 
@@ -169,7 +165,7 @@
               :reveal apps-opened
       (scroll :class "scroll"
               :hscroll false
-              :height 800
+	      :height 800
         (box :orientation "v"
              :space-evenly false
           (for app in apps
@@ -187,12 +183,11 @@
   (eventbox :onhover `eww update wlan-hovered=true`
             :onhoverlost `eww update wlan-hovered=false`
 	    :tooltip wlan-network
-    (box :orientation "v"
-         :space-evenly false
+    (box :space-evenly false
       (button :class "apps-nested-button"
               :onclick `$HOME/.scripts/wlan toggle`
         wlan-status)
-      (revealer :transition "slidedown"
+      (revealer :transition "slideright"
                 :reveal wlan-hovered
         (button :class "apps-nested-button"
 	        :onclick `$HOME/.scripts/apps toggle & $HOME/.scripts/open iwgtk &`
@@ -202,12 +197,11 @@
 (defwidget bluetooth []
   (eventbox :onhover `eww update bluetooth-hovered=true`
             :onhoverlost `eww update bluetooth-hovered=false`
-    (box :orientation "v"
-         :space-evenly false
+    (box :space-evenly false
       (button :class "apps-nested-button"
               :onclick `$HOME/.scripts/bluetooth toggle`
         bluetooth-status)
-      (revealer :transition "slidedown"
+      (revealer :transition "slideright"
                 :reveal bluetooth-hovered
         (button :class "apps-nested-button"
 	        :onclick `$HOME/.scripts/apps toggle & $HOME/.scripts/open blueman-manager &`
@@ -226,17 +220,21 @@
 
 
 (defwidget microphone []
-  (button :class "apps-nested-button"
-          :valign "start"
-          :onclick `pamixer --default-source -t`
-    microphone-status))
+  (box
+    (box)
+    (button :class "apps-nested-button"
+            :valign "start"
+            :onclick `pamixer --default-source -t`
+      microphone-status)))
 
 
 (defwidget webcam []
-  (button :class "apps-nested-button"
-          :valign "start"
-          :onclick `$HOME/.scripts/webcam toggle`
-    webcam-status))
+  (box
+    (box)
+    (button :class "apps-nested-button"
+            :valign "start"
+            :onclick `$HOME/.scripts/webcam toggle`
+      webcam-status)))
 
 
 (defwidget brightness []
@@ -298,7 +296,6 @@
   (box :halign "end"
        :class "bar-box"
        :space-evenly false
-       :tooltip current-desktop
     (for desktop in desktops
       (button :class "bar-nested-button"
               :onclick `bspc desktop -f "${desktop[0]}"`

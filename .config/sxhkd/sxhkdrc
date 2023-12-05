@@ -36,7 +36,7 @@ super + c
 
 # moves the focused window to the emptiest desktop
 super + e
-	find-emptiest-desktop
+	$HOME/.scripts/find-emptiest-desktop
 
 # show password manager
 super + p
