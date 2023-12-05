@@ -78,6 +78,18 @@ $selected-text: #ffffff;
 	border-radius: 5px;
 }
 
+.apps-button {
+	background-color: $overlay-background;
+	border-radius: 5px;
+	color: $text;
+	padding: 0px 8px;
+	margin: 4px;
+}
+
+.apps-button:hover {
+	color: $selected-text;
+}
+
 .apps-box {
 	background-color: $overlay-background;
 	border-radius: 5px;

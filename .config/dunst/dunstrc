@@ -1,7 +1,7 @@
 [global]
     width = (0,500)
     origin = top-right
-    offset = 26x65
+    offset = 16x60
     
     frame_width = 0
     separator_height = 0

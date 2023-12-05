@@ -24,13 +24,13 @@
 	      :year `date +%Y`)))
 
 
-(defwindow apps :geometry (geometry :anchor "center")
+(defwindow apps :geometry (geometry :width 500
+                                    :anchor "center")
 		:windowtype "dialog"
   (box :class "apps-window"
        :orientation "v"
        :space-evenly false
-       :width 400
-    (box :class "apps-box"
+    (box
       (wlan)
       (bluetooth)
       (vpn)
@@ -164,8 +164,8 @@
     (revealer :transition "slidedown"
               :reveal apps-opened
       (scroll :class "scroll"
-              :hscroll false
-	      :height 800
+              :height 500
+              :vscroll true
         (box :orientation "v"
              :space-evenly false
           (for app in apps
@@ -183,8 +183,10 @@
   (eventbox :onhover `eww update wlan-hovered=true`
             :onhoverlost `eww update wlan-hovered=false`
 	    :tooltip wlan-network
-    (box :space-evenly false
+    (box :class "apps-box"
+         :space-evenly false
       (button :class "apps-nested-button"
+              :hexpand true
               :onclick `$HOME/.scripts/wlan toggle`
         wlan-status)
       (revealer :transition "slideright"
@@ -197,8 +199,10 @@
 (defwidget bluetooth []
   (eventbox :onhover `eww update bluetooth-hovered=true`
             :onhoverlost `eww update bluetooth-hovered=false`
-    (box :space-evenly false
+    (box :class "apps-box"
+         :space-evenly false
       (button :class "apps-nested-button"
+              :hexpand true
               :onclick `$HOME/.scripts/bluetooth toggle`
         bluetooth-status)
       (revealer :transition "slideright"
@@ -212,29 +216,22 @@
   (eventbox :onhover `eww update vpn-hovered=true`
             :onhoverlost `eww update vpn-hovered=false`
 	    :visible "${hostname == "notebook"}"
-    (button :class "apps-nested-button"
-            :valign "start"
+    (button :class "apps-button"
             :onclick `$HOME/.scripts/vpn toggle`
             :tooltip vpn-endpoint
       vpn-status)))
 
 
 (defwidget microphone []
-  (box
-    (box)
-    (button :class "apps-nested-button"
-            :valign "start"
-            :onclick `pamixer --default-source -t`
-      microphone-status)))
+  (button :class "apps-button"
+          :onclick `pamixer --default-source -t`
+    microphone-status))
 
 
 (defwidget webcam []
-  (box
-    (box)
-    (button :class "apps-nested-button"
-            :valign "start"
-            :onclick `$HOME/.scripts/webcam toggle`
-      webcam-status)))
+  (button :class "apps-button"
+          :onclick `$HOME/.scripts/webcam toggle`
+    webcam-status))
 
 
 (defwidget brightness []

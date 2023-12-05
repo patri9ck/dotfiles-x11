@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ "$HOSTNAME" != notebook ]
+if [ -z "$VPN_INTERFACE" ]
 then
 	exit 1
 fi
