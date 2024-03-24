@@ -312,7 +312,7 @@
 	        :reveal system-hovered
 	(box :space-evenly false
         (button :class "bar-nested-button"
-	        :onclick `hyprctl dispatch exit`
+	        :onclick `bspc quit`
 		:tooltip system-user
           "")
         (button :class "bar-nested-button"
