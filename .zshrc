@@ -1,6 +1,7 @@
 alias ssh='kitty +kitten ssh'
 alias fix-packages='paru -Qqn | paru -S -'
 alias create-srcinfo='makepkg --printsrcinfo > .SRCINFO'
+alias vim='nvim'
 
 autoload -Uz compinit
 autoload -Uz vcs_info
@@ -27,3 +28,11 @@ compinit
 PS1='%~ ${vcs_info_msg_0_}$ '
 
 . /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+eval "$(zoxide init --cmd cd zsh)"
+
+if [ -z "$TMUX" ]
+then
+    tmux
+fi
+

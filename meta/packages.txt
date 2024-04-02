@@ -3,6 +3,7 @@ blueman
 bspwm
 dunst
 eww-x11
+fzf
 gnome-keyring
 hacksaw
 inetutils
@@ -15,8 +16,11 @@ picom
 pipewire-pulse
 playerctl
 kitty
+ripgrep
 shotgun
 sxhkd
+tmux
+tmux-plugin-manager
 wmname
 xclip
 xdo
@@ -25,12 +29,14 @@ xorg-server
 xorg-xinit
 xorg-xsetroot
 xwallpaper
+zoxide
 zsh
 zsh-completions
 zsh-syntax-highlighting
 
 # Programming
 jdk-openjdk
+maven
 
 # File Manager
 fuse2

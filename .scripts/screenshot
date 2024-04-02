@@ -4,54 +4,54 @@ directory="$HOME/Pictures/Screenshots"
 
 if ! [ -d "$directory" ]
 then
-	mkdir -p "$directory"
+    mkdir -p "$directory"
 fi
 
 image="$directory/$(date +'%Y-%m-%d-%H:%M:%S').png"
 log="$directory/.log"
 
 upload() {
-	if response="$(curl -f -s -H "Authorization: Client-ID $IMGUR_API_KEY" -F "image=@$image" 'https://api.imgur.com/3/image.xml')"
-	then
-		url=$(echo "$response" | xml sel -t --value-of '/data/link')
-		
-		body='Uploaded to Imgur'
+    if response="$(curl -f -s -H "Authorization: Client-ID $IMGUR_API_KEY" -F "image=@$image" 'https://api.imgur.com/3/image.xml')"
+    then
+        url=$(echo "$response" | xml sel -t --value-of '/data/link')
+        
+        body='Uploaded to Imgur'
 
-		echo "$url" | xclip -selection clipboard
+        echo "$url" | xclip -selection clipboard
 
-		echo "$url https://imgur.com/delete/$(echo "$response" | xml sel -t --value-of '/data/deletehash')" >> "$log"
-	else
-		xclip -selection clipboard -t image/png -i "$image"
-	fi
+        echo "$url https://imgur.com/delete/$(echo "$response" | xml sel -t --value-of '/data/deletehash')" >> "$log"
+    else
+        xclip -selection clipboard -t image/png -i "$image"
+    fi
 
-	notify-send 'Screenshot taken' "$body"
+    notify-send 'Screenshot taken' "$body"
 }
 
 fullscreen() {
-	shotgun -s "$local_file"
+    shotgun -s "$local_file"
 
-	upload
+    upload
 }
 
 selection() {
-	if ! selection=$(hacksaw -f "-i %i -g %g")
-	then
-		exit 1
-	fi
+    if ! selection=$(hacksaw -f "-i %i -g %g")
+    then
+        exit 1
+    fi
 
-	shotgun $selection "$image"
+    shotgun $selection "$image"
 
-	upload
+    upload
 }
 
 case "$1" in
-	fullscreen)
-		fullscreen
-		;;
-	selection)
-		selection
-		;;
-	*)
-		exit 1
-		;;
+    fullscreen)
+        fullscreen
+        ;;
+    selection)
+        selection
+        ;;
+    *)
+        exit 1
+        ;;
 esac

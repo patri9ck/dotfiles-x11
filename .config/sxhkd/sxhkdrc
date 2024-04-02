@@ -19,12 +19,16 @@ super + s
 	bspc node -t {\~tiled,\~floating,\~fullscreen}
 
 # move window between desktops
-super + {Left,Right}
+super + {a,d}
 	bspc node -d {prev,next}.local --follow
 
 # move window between monitors
-super + shift + {Left,Right}
+super + shift + {a,d}
 	bspc node -m {west,east} --follow
+
+# move focus between windows
+super + {Left,Right,Up,Down}
+	bspc node -f {west, east, north, south}
 
 # switch workspace using numbers
 super + {0-9}

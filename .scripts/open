@@ -2,15 +2,15 @@
 
 if [ -z "$1" ]
 then
-	exit 1
+    exit 1
 fi
 
 if pids="$(pgrep -x "$1")"
 then
-	for pid in $pids
-	do
-		xdo activate -p "$pid"
-	done
+    for pid in $pids
+    do
+        xdo activate -p "$pid"
+    done
 else
-	eval "$1"
+    eval "$1"
 fi

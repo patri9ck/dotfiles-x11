@@ -15,8 +15,6 @@ then
 	polychromatic-cli -d mouse -z logo -o static -c '#8000FF'
 fi
 
-gnome-keyring-daemon --start
-
 eww daemon
 eww open bar
 sxhkd &
@@ -26,8 +24,11 @@ blueman-applet &
 rclone mount "Google Drive:" "$HOME/Google Drive" &
 thunar --daemon &
 a2ln &
+
 $HOME/.scripts/player &
 $HOME/.scripts/desktops &
+
+gnome-keyring-daemon -s
 
 xwallpaper --stretch "$HOME/Pictures/.background.png"
 
