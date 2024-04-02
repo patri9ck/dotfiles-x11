@@ -28,7 +28,7 @@ upload() {
 }
 
 fullscreen() {
-    shotgun -s "$local_file"
+    shotgun -s "$image"
 
     upload
 }
