@@ -7,7 +7,7 @@ autoload -Uz compinit
 autoload -Uz vcs_info
 
 precmd() {
-	vcs_info
+    vcs_info
 }
 
 __git_files () {
@@ -35,4 +35,3 @@ if [ -z "$TMUX" ]
 then
     tmux
 fi
-
