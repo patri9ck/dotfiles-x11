@@ -2,7 +2,7 @@
 blueman
 bspwm
 dunst
-eww-x11
+eww
 fzf
 gnome-keyring
 hacksaw
