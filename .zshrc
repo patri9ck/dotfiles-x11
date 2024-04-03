@@ -30,8 +30,3 @@ PS1='%~ ${vcs_info_msg_0_}$ '
 . /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 eval "$(zoxide init --cmd cd zsh)"
-
-if [ -z "$TMUX" ]
-then
-    tmux
-fi

@@ -15,12 +15,8 @@ pavucontrol
 picom
 pipewire-pulse
 playerctl
-kitty
-ripgrep
 shotgun
 sxhkd
-tmux
-tmux-plugin-manager
 wmname
 xclip
 xdo
@@ -29,6 +25,13 @@ xorg-server
 xorg-xinit
 xorg-xsetroot
 xwallpaper
+
+# Terminal
+kitty
+neovim
+ripgrep
+tmux
+tmux-plugin-manager
 zoxide
 zsh
 zsh-completions
@@ -36,6 +39,7 @@ zsh-syntax-highlighting
 
 # Programming
 jdk-openjdk
+jetbrains-toolbox
 maven
 
 # File Manager
@@ -58,29 +62,27 @@ ttf-caladea
 ttf-carlito
 ttf-dejavu
 ttf-gentium-basic
+ttf-hack-nerd
 ttf-liberation
 ttf-linux-libertine-g
 ttf-material-icons-git
 
 # Themes
 capitaine-cursors
-arc-gtk-theme
-arc-icon-theme
-
-# Command Line Tools
-a2ln
-cups
-hplip
-htop
-neovim
+rose-pine-gtk-theme
 
 # Applications
 bitwarden
 discord
 galculator
 google-chrome
-jetbrains-toolbox
 libreoffice-fresh
 ristretto
 spotify
 xournalpp
+
+# Other
+a2ln
+cups
+hplip
+htop
