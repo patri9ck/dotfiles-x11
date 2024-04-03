@@ -2,8 +2,8 @@
 super + Return
     kitty
 
-# show launcher or window switcher
-super + l
+# show apps
+super + a
     $HOME/.scripts/apps toggle
 
 # log out
