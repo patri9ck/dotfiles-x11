@@ -30,25 +30,25 @@
     mouse_right_click = close_current
 
 [urgency_low]
-    background = "#2f343f"
-    foreground = "#bac3cf"
+    background = "#191724"
+    foreground = "#e0def4"
 
-    highlight = "#5294e2"
+    highlight = "#c4a7e7"
 
     timeout = 2
 
 [urgency_normal]
-    background = "#2f343f"
-    foreground = "#bac3cf"
+    background = "#191724"
+    foreground = "#e0def4"
 
-    highlight = "#5294e2"
+    highlight = "#c4a7e7"
 
     timeout = 4
 
 [urgency_critical]
-    background = "#2f343f"
-    foreground = "#5294e2"
+    background = "#191724"
+    foreground = "#e0def4"
 
-    highlight = "#5294e2"
+    highlight = "#c4a7e7"
 
     timeout = 6
