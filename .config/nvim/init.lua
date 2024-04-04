@@ -1,6 +1,5 @@
 require("options")
 require("plugins")
-require("keys")
 
 add("rose-pine")
 add("fugitive")
