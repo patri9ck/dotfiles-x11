@@ -52,7 +52,6 @@ return {
                     behavior = cmp.ConfirmBehavior.Replace,
                     select = false
                 }),
-                ["<leader>"] = cmp.mapping.abort()
             })
         })
     end
