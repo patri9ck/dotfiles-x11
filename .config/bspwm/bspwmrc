@@ -21,7 +21,7 @@ sxhkd &
 dunst &
 picom -b
 blueman-applet &
-rclone mount "Google Drive:" "$HOME/Google Drive" &
+rclone mount "drive:" "$HOME/Google Drive" &
 thunar --daemon &
 a2ln &
 
