@@ -51,6 +51,7 @@ rclone
 ristretto
 thunar
 thunar-archive-plugin
+unzip
 xarchiver
 
 # Fonts
