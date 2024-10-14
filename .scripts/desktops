@@ -6,7 +6,11 @@ do
 
     for desktop in $(bspc query -D --names | sort)
     do
-        desktops="$desktops[$desktop, $(bspc query -D -d "$desktop.active" --names || printf 0), $(bspc query -N -d "$desktop" -n '.window.!hidden' | wc -l)]"
+        case "$desktop" in
+            ([0-9])
+                desktops="$desktops[$desktop, $(bspc query -D -d "$desktop.active" --names || printf 0), $(bspc query -N -d "$desktop" -n '.window.!hidden' | wc -l)]"
+                ;;
+        esac
     done
     
     eww update "desktops=$(echo "$desktops]" | sed 's/\]\[/\],\[/g')"

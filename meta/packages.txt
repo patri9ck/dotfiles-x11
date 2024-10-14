@@ -17,6 +17,7 @@ pipewire-pulse
 playerctl
 shotgun
 sxhkd
+systemd-resolvconf
 wmname
 xclip
 xdo
@@ -86,3 +87,4 @@ a2ln
 cups
 hplip
 htop
+nodejs
