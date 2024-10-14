@@ -126,9 +126,9 @@
     `[ "$($HOME/.scripts/battery status)" = charging ] && echo  || echo `)
 (defpoll battery-capacity :interval "1s"
     `$HOME/.scripts/battery capacity`)
-(defpoll battery-time :interval "1s"
+(defpoll battery-remaining :interval "1s"
     :run-while battery-hovered
-    `$HOME/.scripts/battery time`)
+    `$HOME/.scripts/battery remaining`)
 
 
 (defvar desktops "[]")
@@ -283,7 +283,7 @@
         :onhoverlost `eww update battery-hovered=false`
         (box :class "bar-box"
             :space-evenly false
-            :tooltip battery-time
+            :tooltip battery-remaining
             :visible "${hostname == "notebook"}"
             (label :class "bar-nested-label"
                 :text battery-status)

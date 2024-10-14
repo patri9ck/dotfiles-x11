@@ -15,7 +15,7 @@ capacity() {
     echo "$(cat "$battery/capacity")%"
 }
 
-time() {
+remaining() {
     status="$(status)"
 
     if [ "$status" = charging ]
@@ -69,8 +69,8 @@ case "$1" in
     capacity)
         capacity
         ;;
-    time)
-        time
+    remaining)
+        remaining
         ;;
     notify)
         notify
