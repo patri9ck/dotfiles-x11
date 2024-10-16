@@ -307,18 +307,18 @@
         (box :class "bar-box"
             :space-evenly false
             (button :class "bar-nested-button"
-                :onclick `[ -f '/var/lib/pacman/db.lck' ] && notify-send 'Pacman Running' || poweroff`
+                :onclick `$HOME/.scripts/system poweroff`
                 :tooltip system-uptime
                 "")
             (revealer :transition "slideright"
                 :reveal system-hovered
                 (box :space-evenly false
                     (button :class "bar-nested-button"
-                        :onclick `bspc quit`
+                        :onclick `$HOME/.scripts/system 'bspc quit'`
                         :tooltip system-user
                         "")
                     (button :class "bar-nested-button"
-                        :onclick `reboot`
+                        :onclick `$HOME/.scripts/system reboot`
                         ""))))))
 
 
