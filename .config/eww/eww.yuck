@@ -307,7 +307,7 @@
         (box :class "bar-box"
             :space-evenly false
             (button :class "bar-nested-button"
-                :onclick `poweroff`
+                :onclick `[ -f '/var/lib/pacman/db.lck' ] && notify-send 'Pacman Running' || poweroff`
                 :tooltip system-uptime
                 "")
             (revealer :transition "slideright"
