@@ -90,3 +90,4 @@ cups
 hplip
 htop
 nodejs
+simple-scan
